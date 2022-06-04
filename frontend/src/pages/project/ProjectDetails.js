@@ -6,7 +6,7 @@ import GetRequest from "../../functions/GetRequest";
 
 const ProjectDetails = () => {
     const { id } = useParams();
-    const { data, isLoading, error } = GetRequest("https://localhost:7165/api/Project/" + id);
+    const { data, isLoading, error } = GetRequest("https://finalworkapi.azurewebsites.net/api/Project/" + id);
     const history = useHistory();
 
     const push_to_details_page = () => {

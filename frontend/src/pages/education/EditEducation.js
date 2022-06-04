@@ -17,7 +17,7 @@ const EditEducation = () => {
     const [errorMessage, setErrorMessage] = useState(null);
 
     const getEducation = async () => {
-        var response = await axios.get("https://localhost:7165/api/Education/byId/" + id);
+        var response = await axios.get("https://finalworkapi.azurewebsites.net/api/Education/byId/" + id);
         if (response.data.statusCode === 200) {
             setData(response.data);
             setName(response.data.education.name);
@@ -33,7 +33,7 @@ const EditEducation = () => {
 
     const editEducation = async (e) => {
         e.preventDefault();
-        const updated_education = await PutRequest("https://localhost:7165/api/Education/" + id, {
+        const updated_education = await PutRequest("https://finalworkapi.azurewebsites.net/api/Education/" + id, {
             "name": name,
             "department_Address": department_Address
         });

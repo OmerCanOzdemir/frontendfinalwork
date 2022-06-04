@@ -15,7 +15,7 @@ const CreateCategory = () =>{
     const createCategory = async (e) =>{
         e.preventDefault();
 
-        const created_category = await PostRequest("https://localhost:7165/api/Category", {
+        const created_category = await PostRequest("https://finalworkapi.azurewebsites.net/api/Category", {
             "name": name,
             "description": description
         });

@@ -17,7 +17,7 @@ const EditCategory = () => {
     const [errorMessage, setErrorMessage] = useState(null);
 
     const getCategory = async () => {
-        var response = await axios.get("https://localhost:7165/api/Category/byId/" + id);
+        var response = await axios.get("https://finalworkapi.azurewebsites.net/api/Category/byId/" + id);
         if (response.data.statusCode === 200) {
             setData(response.data);
             setName(response.data.category.name);
@@ -33,7 +33,7 @@ const EditCategory = () => {
 
     const editCategory = async (e) => {
         e.preventDefault();
-        const updated_category = await PutRequest("https://localhost:7165/api/Category/" + id, {
+        const updated_category = await PutRequest("https://finalworkapi.azurewebsites.net/api/Category/" + id, {
             "name": name,
             "description":description
         });

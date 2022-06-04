@@ -4,7 +4,7 @@ import GetRequest from "../../functions/GetRequest";
 const Users = () => {
 
     const history = useHistory();
-    const { data, isLoading, error } =GetRequest("https://localhost:7165/api/User");
+    const { data, isLoading, error } =GetRequest("https://finalworkapi.azurewebsites.net/api/User");
     
 
     const push_to_details_page = (id) => {

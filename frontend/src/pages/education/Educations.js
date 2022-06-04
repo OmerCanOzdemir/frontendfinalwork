@@ -11,7 +11,7 @@ const Educations = () => {
 
     const location = useLocation();
     const history = useHistory();
-    const { data, isLoading, error } =GetRequest("https://localhost:7165/api/Education");
+    const { data, isLoading, error } =GetRequest("https://finalworkapi.azurewebsites.net/api/Education");
     const push_to_edit_page = (url) => {
         history.push({
             pathname: url,

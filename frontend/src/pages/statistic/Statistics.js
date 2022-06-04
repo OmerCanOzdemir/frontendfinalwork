@@ -4,7 +4,7 @@ import Chart from 'chart.js/auto';
 import BarChartDates from "../../components/BarChartDates";
 import PieChart from "../../components/PieChart";
 const Statistics = () =>{
-    const { data, isLoading, error } = GetRequest("https://localhost:7165/api/Statistics/");
+    const { data, isLoading, error } = GetRequest("https://finalworkapi.azurewebsites.net/api/Statistics/");
 
     Chart.register(CategoryScale);
 

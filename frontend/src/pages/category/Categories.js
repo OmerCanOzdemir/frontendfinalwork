@@ -15,7 +15,7 @@ const Categories = () => {
     const location = useLocation();
     console.log(location);
     const history = useHistory();
-    const { data, isLoading, error } =GetRequest("https://localhost:7165/api/Category");
+    const { data, isLoading, error } =GetRequest("https://finalworkapi.azurewebsites.net/api/Category");
     const push_to_edit_page = (url) => {
         history.push({
             pathname: url,

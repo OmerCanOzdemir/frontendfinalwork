@@ -13,7 +13,7 @@ const CreateEducation = () =>{
     const createEducation = async (e) =>{
         e.preventDefault();
 
-        const created_education = await PostRequest("https://localhost:7165/api/Education", {
+        const created_education = await PostRequest("https://finalworkapi.azurewebsites.net/api/Education", {
             "name": name,
             "department_Address": department_Address
         });
