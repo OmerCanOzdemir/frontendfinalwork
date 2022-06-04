@@ -46,7 +46,7 @@ jobs:
       with:
         push: true
         tags: dockerforfinalwork.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_95a2882f4efb4d8abec9ed56c67c2509 }}/frontend:${{ github.sha }}
-        file: ./frontend/Dockerfile
+        file: ./frontend
 
   deploy:
     runs-on: ubuntu-latest
