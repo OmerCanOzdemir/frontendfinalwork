@@ -7,7 +7,7 @@ const GetRequest = (url) => {
     const [error, setError] = useState(null);
     useEffect(() => {
         axios.get(
-            url 
+            url,{ headers: { "authorisation": "00000000-0000-0000-0000-000000000000" } }
         )
             .then(function (response) {
                 if (response.data.statusCode === 200) {

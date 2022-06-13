@@ -9,7 +9,6 @@ const Statistics = () =>{
     Chart.register(CategoryScale);
 
 
-    console.log(data);
     if(data){
         return(
             <div className="p-4 grid grid-cols-2 gap-5">

@@ -9,7 +9,7 @@ const UserDetails = () => {
     const googleMapsUrl = "https://www.google.be/maps/place/";
     const history = useHistory();
     const { data, isLoading, error } = GetRequest("https://finalworkapi.azurewebsites.net/api/User/byId/" + id);
-    console.log(data);
+    
 
     const push_to_details_page = (id) => {
 
@@ -26,7 +26,7 @@ const UserDetails = () => {
             interests.push(element.category.name);
         });
         var joined_array = interests.join();
-
+        console.log(data.user.created_Projects);
         return (
             <div className="container p-4 ">
                 <div className="container mx-auto px-20 mt-10">
@@ -128,7 +128,7 @@ const UserDetails = () => {
                                             <tr className="h-10  hover:bg-gray-200" key={project.id}>
                                                 <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap">{project.id}</td>
                                                 <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap">{project.title}</td>
-                                                <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap">{project.category.name}</td>
+                                                <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap">{project["category"]["name"]}</td>
                                                 <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap">{ project.project_Users.length + 1 }</td>
                                                 <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap"><button onClick={() => push_to_details_page(project.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></button></td>
 
@@ -172,7 +172,7 @@ const UserDetails = () => {
                                             <tr className="h-10  hover:bg-gray-200" key={project.project.id}>
                                                 <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap">{project.project.id}</td>
                                                 <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap">{project.project.title}</td>
-                                                <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap">{project.project.category.name}</td>
+                                                <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap">{project.project["category"]["name"]}</td>
                                                 <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap">{project.project.project_Users.length +1  }</td>
                                                 <td className="py-4 px-6 text-sm font-medium  whitespace-nowrap"><button onClick={() => push_to_details_page(project.project.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></button></td>
 
